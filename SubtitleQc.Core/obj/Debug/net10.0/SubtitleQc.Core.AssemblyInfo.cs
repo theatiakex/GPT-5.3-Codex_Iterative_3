@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SubtitleQc.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+573c6ea555ea6f582a10e11cfac220140ec7cfbf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8197be5430c825dd5297050f7393018eed03fb0a")]
 [assembly: System.Reflection.AssemblyProductAttribute("SubtitleQc.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SubtitleQc.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
