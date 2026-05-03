@@ -57,3 +57,27 @@ Logged telemetry for this iteration in test_metrics.jsonl:
 project_iteration: 2, attempt: 1, build_successful: true, passed: 13, failed: 0
 If you want, next I can add a small parser-factory entry point so you can pass format + raw text and run QC in one call (still keeping rule engine untouched).
 
+
+### Iteration 3
+
+Extended the prototype for iteration 3 by integrating external shot-change data into the model/rules, while leaving the core engine behavior intact.
+
+What I added
+Updated Cue to support external frame metadata:
+SubtitleQc.Core/Models/Cue.cs
+Added optional startFrame constructor parameter and StartFrame property.
+Added external data abstraction:
+SubtitleQc.Core/Qc/Abstractions/IShotChangeProvider.cs
+Exposes shot cuts as timestamps and frames.
+Added new iteration-3 rules:
+SubtitleQc.Core/Qc/Rules/CrossShotBoundaryCheckRule.cs
+Fails cue when a cut timestamp is strictly inside (cue.Start, cue.End).
+SubtitleQc.Core/Qc/Rules/MinFramesFromShotChangeRule.cs
+Fails cue when minimum frame distance from any cut is < thresholdFrames.
+Uses Cue.StartFrame + provider frame cuts.
+Verification
+Ran: dotnet test SubtitleQc.Tests/SubtitleQc.Tests.csproj
+Result: 19 passed, 0 failed (iteration 1 + 3 tests passing)
+Logged run in test_metrics.jsonl as:
+project_iteration: 3, attempt: 1, build_successful: true, total_tests: 19, passed: 19, failed: 0, pass_rate_percentage: 100
+If you want, I can continue with iteration 4 next in the same way.
