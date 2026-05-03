@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project>
-  <ProjectGroup label="Projects">
-    <ProjectItem path="SubtitleQc.Core/SubtitleQc.Core.csproj" />
-    <ProjectItem path="SubtitleQc.Tests/SubtitleQc.Tests.csproj" />
-  </ProjectGroup>
-</Project>
